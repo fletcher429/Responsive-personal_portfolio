@@ -64,3 +64,63 @@ const typed = new Typed('.multiple-text',{
     loop:true
 });
 
+function startCounter(targetId, finalValue, duration) {
+    let current = 0;
+    const increment = finalValue / duration;
+    const targetElement = document.getElementById(targetId);
+    
+    const counterInterval = setInterval(() => {
+        current += increment;
+        targetElement.textContent = Math.ceil(current);
+        if (current >= finalValue) {
+            clearInterval(counterInterval);
+            targetElement.textContent = finalValue;
+        }
+    }, 50); // Adjust interval for desired speed
+}
+
+startCounter("projectsCounter", 34, 25); // 1000ms = 1 second
+startCounter("clientsCounter", 4, 100); // 1000ms = 1 second
+document.addEventListener("DOMContentLoaded", function() {
+    // Select the projects-done section
+    const projectsDone = document.getElementById("projectsDone");
+
+    // Fade in from the right animation
+    projectsDone.style.display = "block"; // Display the element
+    projectsDone.style.opacity = 1; // Set opacity to 1
+    projectsDone.style.transform = "translateX(0)"; // Move element to original position
+});
+// Function to check if an element is in viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Function to handle scroll event
+function handleScroll() {
+    const recentEditsSection = document.querySelector('.recent-edits');
+    const longItems = document.querySelectorAll('.long-item');
+
+    // Check if recent-edits section is in viewport
+    if (isInViewport(recentEditsSection)) {
+        // Trigger animations for each long item
+        longItems.forEach((item, index) => {
+            if (index % 2 === 0) {
+                item.style.animation = 'slideFromRight 1s ease forwards';
+            } else {
+                item.style.animation = 'slideFromLeft 1s ease forwards';
+            }
+        });
+
+        // Remove scroll event listener after triggering animations
+        window.removeEventListener('scroll', handleScroll);
+    }
+}
+
+// Add scroll event listener
+window.addEventListener('scroll', handleScroll);

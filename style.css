@@ -702,3 +702,127 @@
        max-height: 30vh; /* Set maximum height */
    }
 }
+.projects-done {
+   position: absolute;
+   top: 36%;
+   right: 70px; /* Positioned 70px from the right */
+   opacity: 0; /* Initially set opacity to 0 */
+   transform: translateX(100%); /* Initially position the element outside the viewport to the right */
+   transition: opacity 1s ease, transform 1s ease;
+   align-items: center;
+   justify-content: center; /* Smooth transition for opacity and transform */
+}
+
+
+.projects-done h2 {
+   color: #ffffff;
+   font-size: 50px; /* Larger font size */
+   margin-bottom: 10px; /* Adding gap between text */
+}
+
+.projects-done p {
+   color: #ffffff;
+   font-size: 40px; /* Larger font size */
+   margin: 10px 0;
+}
+@media only screen and (max-width: 768px) {
+   .projects-done {
+       position: static;
+       margin-top: 200px;
+   }
+   
+   .projects-done h2 {
+       font-size: 24px; /* Adjust font size for mobile */
+   }
+
+   .projects-done p {
+       font-size: 70px; /* Adjust font size for mobile */
+   }
+
+   .home-img {
+       margin-top: 20px; /* Move down the image */
+   }
+}
+/* Hide system scrollbar */
+body {
+   scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+   display: none; /* Chrome, Safari, Edge */
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+   width: 10px;
+   background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+   background-color: #FFDC4B;
+   border-radius: 10px;
+   transition: width 0.3s ease; /* Adding transition for smooth animation */
+}
+
+::-webkit-scrollbar-thumb:hover {
+   background-color: #FFD439;
+}
+
+::-webkit-scrollbar-track {
+   background-color: transparent;
+}
+
+/* Adjust scrollbar for specific container */
+.custom-scroll-container {
+   overflow-y: auto;
+}
+
+/* Animation for scrollbar stretching */
+.custom-scroll-container:hover::-webkit-scrollbar-thumb {
+   width: 20px; /* Adjust the width as needed */
+}
+@keyframes slideFromRight {
+   0% {
+       transform: translateX(100%);
+       opacity: 0;
+   }
+   100% {
+       transform: translateX(0);
+       opacity: 1;
+   }
+}
+
+@keyframes slideFromLeft {
+   0% {
+       transform: translateX(-100%);
+       opacity: 0;
+   }
+   100% {
+       transform: translateX(0);
+       opacity: 1;
+   }
+}
+
+#video1 {
+   animation: slideFromRight 1s ease forwards;
+}
+
+#video2 {
+   animation: slideFromLeft 1s ease forwards;
+}
+
+#video3 {
+   animation: slideFromRight 1s ease forwards;
+}
+
+#video4 {
+   animation: slideFromLeft 1s ease forwards;
+}
+
+#video5 {
+   animation: slideFromRight 1s ease forwards;
+}
+
+#video6 {
+   animation: slideFromLeft 1s ease forwards;
+}
