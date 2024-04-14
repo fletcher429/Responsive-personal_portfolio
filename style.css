@@ -1129,3 +1129,21 @@ img {
     height: 540px; /* Allow iframes to adjust their height accordingly */
   }
 }
+/* Define the keyframes for the animation */
+@keyframes resizeIframe {
+  from {
+    width: 640px;
+    height: 799px;
+  }
+  to {
+    width: 450px;
+    height: 540px;
+  }
+}
+
+/* Apply the animation to the iframe */
+@media (max-width: 768px) {
+  .ag-timeline-card_img-box iframe {
+    animation: resizeIframe 0.5s ease forwards;
+  }
+}
