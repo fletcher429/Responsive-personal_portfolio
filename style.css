@@ -855,42 +855,6 @@ body::-webkit-scrollbar {
    width: 800px;/* Adjust width as needed */
    height: 700px;
  }
-
-
-/* Define keyframes for resizing the Calendly embed */
-@keyframes resizeCalendly {
-   from {
-      transform: scale(1);
-      opacity: 1;
-   }
-   to {
-      transform: scale(0.8);
-      opacity: 0.8;
-   }
-}
-
-/* Apply keyframes to Calendly embed */
-.calendly-inline-widget {
-   animation: resizeCalendly 0.5s forwards;
-   position: relative;
-   top: 0;
-   left: 0;
-   margin-top: 20px; /* Adjust as needed */
-   display: none; /* Initially hide the Calendly embed */
-}
-
-/* Show Calendly embed on smaller screens */
-@media only screen and (max-width: 768px) {
-   .calendly-inline-widget {
-      display: block;
-   }
-   .about-img img {
-      width: 100%; /* Ensure the image avatar takes full width */
-   }
-}
-
- 
- /* Root Colors */
 :root {
    --bg-color: #000000;
    --second-bg-color: #000000;
