@@ -1,15 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-/* Mobile optimization */
-@media only screen and (max-width: 768px) {
-    /* Add your mobile-specific styles here */
-    body {
-        font-size: 16px; /* Example: Increase font size for better readability on smaller screens */
-    }
-}
-/* Disable horizontal scrolling on smaller screens */
-html, body {
-    overflow-x: hidden;
-}
 
 *{
     margin: 0;
@@ -30,7 +19,9 @@ html, body {
     --main-color:#FFDC4B; 
  }
  
-
+ html, body {
+   overflow-x: hidden;
+}
  html{
     font-size: 62.5%;
     overflow-x:hidden;
@@ -855,6 +846,8 @@ body::-webkit-scrollbar {
    width: 800px;/* Adjust width as needed */
    height: 700px;
  }
+ 
+ /* Root Colors */
 :root {
    --bg-color: #000000;
    --second-bg-color: #000000;
