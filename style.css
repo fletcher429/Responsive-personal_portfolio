@@ -1130,6 +1130,7 @@ img {
   }
 }
 /* Define the keyframes for the animation */
+/* Define the keyframes for the animation */
 @keyframes resizeIframe {
   from {
     width: 640px;
@@ -1138,12 +1139,20 @@ img {
   to {
     width: 350px;
     height: 400px;
+    /* Adjust left position as needed */
+    left: 0;
   }
 }
 
 /* Apply the animation to the iframe */
 @media (max-width: 768px) {
+  .ag-timeline-card_img-box {
+    position: relative; /* Ensure positioning context */
+  }
+
   .ag-timeline-card_img-box iframe {
+    position: absolute; /* Position iframe relative to its container */
+    left: 0; /* Align iframe to the left */
     animation: resizeIframe 0.5s ease forwards;
   }
 }
